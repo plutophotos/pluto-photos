@@ -1,0 +1,207 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Trigger on version tags like v1.0.0
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            platform: win
+          - os: macos-latest
+            platform: mac
+          - os: ubuntu-latest
+            platform: linux
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Ensure Git LFS assets are present
+        run: |
+          git lfs pull
+          git lfs checkout
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Remove npm mirror overrides for CI
+        run: |
+          echo "" > .npmrc
+        shell: bash
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebuild native modules for Electron
+        run: npx electron-rebuild -f -w better-sqlite3
+
+      - name: Download RMBG-1.4 model
+        run: node scripts/download-rmbg-model.mjs
+
+      - name: Download caption & CLIP models
+        run: node scripts/download-caption-model.mjs
+
+      - name: Generate installer images
+        if: matrix.platform == 'win'
+        run: node scripts/create-installer-images.mjs
+
+      - name: Build for ${{ matrix.platform }}
+        run: npm run build:${{ matrix.platform }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # For macOS code signing (optional - set these secrets in your repo):
+          # CSC_LINK: ${{ secrets.MAC_CERTS }}
+          # CSC_KEY_PASSWORD: ${{ secrets.MAC_CERTS_PASSWORD }}
+          # APPLE_ID: ${{ secrets.APPLE_ID }}
+          # APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          # APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+
+      # ── Smoke test: headless launch on all platforms ──
+      - name: Smoke test
+        run: node scripts/ci-smoke-test.mjs
+        env:
+          CI: true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pluto-photos-${{ matrix.platform }}
+          path: |
+            dist/*.exe
+            dist/*.dmg
+            dist/*.AppImage
+            dist/*.deb
+            dist/*.zip
+            dist/*.yml
+            dist/*.yaml
+            dist/*.blockmap
+          if-no-files-found: warn
+
+  packaged-smoke:
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            label: win
+            build_script: build:win:dir
+          - os: macos-13
+            label: mac-x64
+            build_script: build:mac:x64:dir
+          - os: macos-latest
+            label: mac-arm64
+            build_script: build:mac:arm64:dir
+          - os: ubuntu-latest
+            label: linux
+            build_script: build:linux:dir
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Ensure Git LFS assets are present
+        run: |
+          git lfs pull
+          git lfs checkout
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Remove npm mirror overrides for CI
+        run: |
+          echo "" > .npmrc
+        shell: bash
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebuild native modules for Electron
+        run: npx electron-rebuild -f -w better-sqlite3
+
+      - name: Download RMBG-1.4 model
+        run: node scripts/download-rmbg-model.mjs
+
+      - name: Download caption & CLIP models
+        run: node scripts/download-caption-model.mjs
+
+      - name: Generate installer images
+        if: matrix.label == 'win'
+        run: node scripts/create-installer-images.mjs
+
+      - name: Build unpacked artifact for ${{ matrix.label }}
+        run: npm run ${{ matrix.build_script }}
+
+      - name: Packaged smoke test
+        run: node scripts/packaged-smoke-test.mjs
+        env:
+          CI: true
+          PLUTO_EXPECTED_PLATFORM: ${{ runner.os }}
+          PLUTO_EXPECTED_TARGET: ${{ matrix.label }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          generate_release_notes: true
+          files: artifacts/**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy-updates:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: List artifacts
+        run: find artifacts -type f | head -50
+
+      - name: Upload to WHC hosting via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        timeout-minutes: 15
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: artifacts/
+          server-dir: /
+          dangerous-clean-slate: false
+          timeout: 60000
+          protocol: ftps

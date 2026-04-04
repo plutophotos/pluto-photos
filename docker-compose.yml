@@ -1,0 +1,27 @@
+#
+# WARNING: To install Pluto Photos, follow the guide at https://plutophotos.com/docs/docker
+#
+# Make sure to use the docker-compose.yml from:
+#   https://plutophotos.com/docker/docker-compose.yml
+#
+
+name: pluto-photos
+
+services:
+  pluto-photos:
+    image: plutophotos/server:${PLUTO_VERSION:-latest}
+    container_name: pluto-photos
+    restart: unless-stopped
+    ports:
+      - "3456:3456"   # HTTPS
+      - "3457:3457"   # HTTP redirect
+    volumes:
+      # Do not edit the next line. To change the photo location,
+      # edit the value of UPLOAD_LOCATION in the .env file.
+      - ${UPLOAD_LOCATION}:/photos
+      - pluto-data:/data
+    env_file:
+      - .env
+
+volumes:
+  pluto-data:

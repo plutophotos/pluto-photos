@@ -1,0 +1,29 @@
+Pluto Photos — End User License Agreement
+
+Copyright (c) 2025-2026 Pluto Photos. All rights reserved.
+
+By installing Pluto Photos, you agree to the following terms:
+
+1. LICENSE GRANT
+   You are granted a non-exclusive, non-transferable license to install
+   and use Pluto Photos on your personal computer(s).
+
+2. PRIVACY
+   Pluto Photos operates 100% offline. Your photos, metadata, and library
+   data remain on your device. No data is transmitted to external servers
+   except for optional features you explicitly enable (e.g., update checks).
+
+3. RESTRICTIONS
+   You may not reverse-engineer, decompile, or redistribute Pluto Photos.
+   Pro features require a valid license key.
+
+4. DISCLAIMER
+   Pluto Photos is provided "as-is" without warranty of any kind. The
+   developers are not liable for any data loss or damages arising from
+   the use of this software. Always maintain backups of your photos.
+
+5. UPDATES
+   Updates may be provided at the developer's discretion. The application
+   may check for updates if you have enabled automatic update checking.
+
+For questions or support, visit: https://plutophotos.com

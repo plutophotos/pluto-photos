@@ -1,0 +1,71 @@
+# ============================================================
+# Docker ignore — keep the image lean
+# ============================================================
+
+# Git
+.git
+.github
+.gitignore
+
+# IDE / editor
+.vscode
+.editorconfig
+.idea
+
+# Dev configs
+.eslintcache
+eslint.config.mjs
+.prettierrc.yaml
+.prettierignore
+.npmrc
+tsconfig*.json
+!tsconfig.json
+!tsconfig.web.json
+electron.vite.config.ts
+electron-builder.yml
+dev-app-update.yml
+
+# Source that's not needed for server
+src/renderer/
+!src/renderer/
+src/renderer/*
+!src/renderer/video-editor.html
+!src/renderer/src/
+!src/renderer/src/**
+src/preload/
+build/afterPack.cjs
+build/afterSign.cjs
+build/entitlements.mac.plist
+build/installer.nsh
+build/license.txt
+build/installerHeader.bmp
+build/installerSidebar.bmp
+# build/docker-entrypoint.sh is NOT ignored — it's needed for the Docker image
+
+# Build outputs (the server doesn't use Electron builds)
+out/
+dist/
+release/
+
+# Background removal models (renderer-only feature, ~200MB)
+resources/bg-removal/
+
+# Dev & build tools
+node_modules/
+scripts/
+
+# License server (separate service)
+license-server/
+
+# Package (npm package, not needed in Docker)
+package/
+
+# Docs
+README.md
+AUDIT_REPORT.md
+CHANGELOG.md
+LICENSE
+
+# OS files
+Thumbs.db
+.DS_Store

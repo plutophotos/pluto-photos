@@ -1,0 +1,34 @@
+node_modules
+dist
+out
+.DS_Store
+.eslintcache
+*.log*
+.env
+
+# License server (private — not distributed with source)
+license-server/
+
+# AI model weights (large binaries, downloaded at build time)
+resources/bg-removal/
+resources/bg-removal-rmbg/
+resources/caption-model/
+resources/blip-model/
+
+# Test artifacts
+.smoke-test-tmp/
+test-font.*
+test_font*.png
+
+# Internal dev files
+build_linux.sh
+AUDIT_REPORT.md
+
+# Build outputs
+*.exe
+*.dmg
+*.AppImage
+*.deb
+*.snap
+*.blockmap
+*.yml.bak

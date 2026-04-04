@@ -1,0 +1,48 @@
+Source-Available License
+
+Copyright (c) 2024-2026 Pluto Photos. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated source code (the "Software"), to view, study,
+and audit the Software for personal, non-commercial purposes, subject to the
+following conditions:
+
+1. PERMITTED USES
+   - You may read, study, and learn from the source code.
+   - You may build the Software from source for personal, non-commercial use.
+   - You may submit bug reports, patches, and pull requests to the official
+     repository.
+   - You may fork the repository for the purpose of contributing back to the
+     official project.
+
+2. RESTRICTIONS
+   - You may NOT redistribute the Software or any derivative works, in source
+     or binary form, whether for commercial or non-commercial purposes.
+   - You may NOT sell, sublicense, lease, or otherwise commercialize the
+     Software or any derivative works.
+   - You may NOT use the Software's source code to create competing products
+     or services.
+   - You may NOT remove or alter this license notice from any copies of the
+     Software.
+
+3. CONTRIBUTIONS
+   By submitting a pull request or patch, you grant Pluto Photos a perpetual,
+   worldwide, non-exclusive, royalty-free, irrevocable license to use,
+   reproduce, modify, and distribute your contribution as part of the
+   Software.
+
+4. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+   FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
+
+5. TERMINATION
+   This license is automatically terminated if you violate any of its terms.
+   Upon termination, you must destroy all copies of the Software in your
+   possession.
+
+For commercial licensing inquiries, contact: support@plutophotos.com

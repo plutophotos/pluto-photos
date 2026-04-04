@@ -1,0 +1,520 @@
+/* ============================================================
+   FUTURISTIC / CYBER THEME OVERRIDES
+   ============================================================
+   A dark, neon-accented theme with glowing borders, subtle 
+   gradients, and a sci-fi aesthetic. Uses cyan (#00f0ff) and 
+   purple (#a855f7) accents on a deep navy background.
+   ============================================================ */
+
+/* Global dropdown option styling — native <option> elements ignore most CSS
+   but background & color are respected on Windows/Linux Chromium */
+html[data-theme="futuristic"] select,
+html[data-theme="futuristic"] select option {
+  background: #0a0f1e;
+  color: #e0e6ff;
+}
+html[data-theme="futuristic"] select option:checked {
+  background: rgba(0, 240, 255, 0.15);
+  color: #00f0ff;
+}
+
+
+/* ============================================================
+   SMART ALBUM PANEL
+   ============================================================ */
+html[data-theme="futuristic"] .smart-album-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .smart-album-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .smart-album-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .smart-album-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .btn-close:hover { color: #00f0ff; }
+html[data-theme="futuristic"] .smart-album-panel .field label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .modern-input { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .smart-album-panel .modern-input:focus { border-color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .smart-album-panel .modern-select { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .smart-album-panel .icon-btn { background: rgba(0,240,255,0.06); color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .icon-btn:hover { background: rgba(0,240,255,0.12); color: #00f0ff; }
+html[data-theme="futuristic"] .smart-album-panel .icon-btn.active { border-color: #00f0ff; background: rgba(0,240,255,0.1); color: #00f0ff; }
+html[data-theme="futuristic"] .smart-album-panel .rules-header label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .match-label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .toggle-btn { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .btn-remove-rule { color: #ff4d6a; }
+html[data-theme="futuristic"] .smart-album-panel .btn-add-rule { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .smart-album-panel .btn-add-rule:hover { border-color: #00f0ff; color: #00f0ff; }
+html[data-theme="futuristic"] .smart-album-panel .preview-count { color: #00f0ff; background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .smart-album-panel .panel-footer { border-top-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .smart-album-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .smart-album-panel .action-btn:hover { background: rgba(0,240,255,0.12); border-color: rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .smart-album-panel .action-btn.primary { background: linear-gradient(135deg, #00f0ff, #a855f7); border-color: transparent; color: #000; font-weight: 700; }
+
+
+/* ============================================================
+   PEOPLE PANEL
+   ============================================================ */
+html[data-theme="futuristic"] .people-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .people-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .people-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .people-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .people-panel .empty-state { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .people-panel .empty-icon { color: rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .people-panel .hint { color: rgba(0,240,255,0.35); }
+html[data-theme="futuristic"] .people-panel .person-card { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .people-panel .person-card:hover { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.2); }
+html[data-theme="futuristic"] .people-panel .person-avatar { background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .people-panel .person-name { color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .photo-count { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .people-panel .icon-btn-sm { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .people-panel .icon-btn-sm:hover { background: rgba(0,240,255,0.08); color: #00f0ff; }
+html[data-theme="futuristic"] .people-panel .name-input { background: rgba(0,240,255,0.04); border-color: #00f0ff; color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .merge-bar { background: rgba(168,85,247,0.08); border-color: rgba(168,85,247,0.2); color: #a855f7; }
+html[data-theme="futuristic"] .people-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .action-btn:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .people-panel .cancel-btn { border-color: #ff4d6a; color: #ff4d6a; }
+html[data-theme="futuristic"] .people-panel .cancel-btn:hover { background: rgba(255,77,106,0.08); }
+html[data-theme="futuristic"] .people-panel .face-card { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .people-panel .face-crop-container { background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .people-panel .face-filename { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .people-panel .reassign-select { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .btn-remove-face { color: #ff4d6a; }
+html[data-theme="futuristic"] .people-panel .btn-remove-face:hover { background: rgba(255,77,106,0.08); }
+html[data-theme="futuristic"] .people-panel .new-person-input { background: rgba(0,240,255,0.04); border-color: #00f0ff; color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .review-header h3 { color: #e0e6ff; }
+html[data-theme="futuristic"] .people-panel .review-hint { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .people-panel .face-count-label { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .people-panel .progress-track { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .people-panel .progress-details { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .people-panel .person-card.merge-target { border-color: rgba(168,85,247,0.3); }
+html[data-theme="futuristic"] .people-panel .person-card.merge-target:hover { background: rgba(168,85,247,0.08); }
+html[data-theme="futuristic"] .people-panel .faces-virtual-scroll::-webkit-scrollbar-thumb { background: rgba(0,240,255,0.15); }
+
+
+/* ============================================================
+   CONTEXT SEARCH PANEL
+   ============================================================ */
+html[data-theme="futuristic"] .context-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .context-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .context-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .context-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .header-icon { color: #00f0ff; }
+html[data-theme="futuristic"] .context-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .context-panel .btn-close:hover { color: #00f0ff; }
+html[data-theme="futuristic"] .context-panel .warning-box { background: rgba(255,160,10,0.08); border-color: rgba(255,160,10,0.24); color: #ffb347; }
+html[data-theme="futuristic"] .context-panel .warning-box p:first-child { color: #ffb347; }
+html[data-theme="futuristic"] .context-panel .warning-box .hint { color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .context-panel .warning-box code { background: rgba(0,240,255,0.08); color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .stat-card { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .context-panel .stat-value { color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .stat-label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .context-panel .progress-bar { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .context-panel .progress-fill { background: linear-gradient(90deg, #00f0ff, #a855f7); }
+html[data-theme="futuristic"] .context-panel .progress-text { color: rgba(0,240,255,0.45); }
+html[data-theme="futuristic"] .context-panel .search-section label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .context-panel .threshold-label { color: rgba(0,240,255,0.45); }
+html[data-theme="futuristic"] .context-panel .threshold-value { color: #00f0ff; }
+html[data-theme="futuristic"] .context-panel .search-icon { color: rgba(0,240,255,0.35); }
+html[data-theme="futuristic"] .context-panel .modern-input { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .modern-input:focus { border-color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .context-panel .search-result-count { color: #00f0ff; background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .context-panel .result-card { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .context-panel .result-card:hover { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.2); }
+html[data-theme="futuristic"] .context-panel .result-thumb { background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .context-panel .result-score { color: #00f0ff; }
+html[data-theme="futuristic"] .context-panel .dismiss-result-btn { color: #ff4d6a; }
+html[data-theme="futuristic"] .context-panel .dismiss-result-btn:hover { background: rgba(255,77,106,0.08); }
+html[data-theme="futuristic"] .context-panel .result-caption { color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .result-path { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .context-panel .info-section { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .context-panel .info-section h3 { color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .info-section li { color: rgba(200,220,255,0.7); }
+html[data-theme="futuristic"] .context-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .context-panel .action-btn:hover { background: rgba(0,240,255,0.12); border-color: rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .context-panel .action-btn.primary { background: linear-gradient(135deg, #00f0ff, #a855f7); border-color: transparent; color: #000; font-weight: 700; }
+html[data-theme="futuristic"] .context-panel .cancel-btn { border-color: #ff4d6a; color: #ff4d6a; }
+html[data-theme="futuristic"] .context-panel .cancel-btn:hover { background: rgba(255,77,106,0.08); }
+html[data-theme="futuristic"] .context-panel .rescan-btn { border-color: rgba(255,160,10,0.35); color: #ffb347; }
+html[data-theme="futuristic"] .context-panel .rescan-btn:hover { background: rgba(255,160,10,0.08); }
+
+
+/* ============================================================
+   BATCH OPS PANEL
+   ============================================================ */
+html[data-theme="futuristic"] .batch-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .batch-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .batch-panel .batch-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .batch-panel .batch-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .batch-panel .batch-count { background: rgba(0,240,255,0.08); color: #00f0ff; }
+html[data-theme="futuristic"] .batch-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .batch-panel .batch-section h3 { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .batch-panel .modern-input { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .batch-panel .modern-input:focus { border-color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .batch-panel .modern-select { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .batch-panel .modern-slider { accent-color: #00f0ff; }
+html[data-theme="futuristic"] .batch-panel .star-btn { color: rgba(0,240,255,0.2); }
+html[data-theme="futuristic"] .batch-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .batch-panel .action-btn:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .batch-panel .action-btn.primary { background: linear-gradient(135deg, #00f0ff, #a855f7); border-color: transparent; color: #000; font-weight: 700; }
+html[data-theme="futuristic"] .batch-panel .export-options { color: #e0e6ff; }
+html[data-theme="futuristic"] .batch-panel .option-row label { color: rgba(200,220,255,0.7); }
+html[data-theme="futuristic"] .batch-panel .option-row .val { color: rgba(0,240,255,0.5); }
+
+
+/* ============================================================
+   CLOUD IMPORT PANEL
+   ============================================================ */
+html[data-theme="futuristic"] .import-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .import-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .import-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .import-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .import-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .import-panel .tab-bar { background: rgba(0,240,255,0.03); }
+html[data-theme="futuristic"] .import-panel .tab { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .import-panel .tab:hover { color: #00f0ff; }
+html[data-theme="futuristic"] .import-panel .tab.active { background: rgba(0,240,255,0.08); color: #00f0ff; box-shadow: 0 0 10px rgba(0,240,255,0.1); }
+html[data-theme="futuristic"] .import-panel .info-box { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.1); }
+html[data-theme="futuristic"] .import-panel .info-box p,
+html[data-theme="futuristic"] .import-panel .info-box li { color: rgba(200,220,255,0.7); }
+html[data-theme="futuristic"] .import-panel .field label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .import-panel .modern-input { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .import-panel .modern-input:focus { border-color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .import-panel .progress-bar { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .import-panel .progress-label { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .import-panel .result-box { color: #e0e6ff; }
+html[data-theme="futuristic"] .import-panel .result-box.success { background: rgba(0,255,136,0.06); color: #00ff88; }
+html[data-theme="futuristic"] .import-panel .result-box.error { background: rgba(255,77,106,0.06); color: #ff4d6a; }
+html[data-theme="futuristic"] .import-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .import-panel .action-btn:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .import-panel .action-btn.primary { background: linear-gradient(135deg, #00f0ff, #a855f7); border-color: transparent; color: #000; font-weight: 700; }
+
+
+/* ============================================================
+   DUPLICATE FINDER
+   ============================================================ */
+html[data-theme="futuristic"] .dup-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .dup-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .dup-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .dup-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .dup-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .dup-panel .empty-state { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .dup-panel .empty-icon { color: rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .dup-panel .hint { color: rgba(0,240,255,0.35); }
+html[data-theme="futuristic"] .dup-panel .scanning-state { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .dup-panel .progress-bar-wrap { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .dup-panel .progress-msg { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .dup-panel .dup-summary { background: rgba(255,77,106,0.04); border-color: rgba(255,77,106,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .dup-panel .dup-group { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .dup-panel .group-header { border-bottom-color: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .dup-panel .group-label { color: #e0e6ff; }
+html[data-theme="futuristic"] .dup-panel .compare-btn { color: #00f0ff; border-color: rgba(0,240,255,0.25); }
+html[data-theme="futuristic"] .dup-panel .compare-btn:hover { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .dup-panel .dup-item { border-bottom-color: rgba(0,240,255,0.04); }
+html[data-theme="futuristic"] .dup-panel .dup-item.marked-delete { background: rgba(255,77,106,0.04); }
+html[data-theme="futuristic"] .dup-panel .dup-name { color: #e0e6ff; }
+html[data-theme="futuristic"] .dup-panel .dup-path { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .dup-panel .dup-meta { color: rgba(0,240,255,0.35); }
+html[data-theme="futuristic"] .dup-panel .dup-thumb { background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .dup-panel .btn-delete-dup { color: #ff4d6a; }
+html[data-theme="futuristic"] .dup-panel .btn-undo-dup { color: #00f0ff; }
+html[data-theme="futuristic"] .dup-panel .apply-bar { background: #0a0f1e; border-top-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .dup-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .dup-panel .action-btn:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .dup-panel .action-btn.danger { background: linear-gradient(135deg, #ff4d6a, #ff1744); border-color: transparent; color: #fff; }
+html[data-theme="futuristic"] .dup-panel .header-actions .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+
+
+/* ============================================================
+   SETTINGS PANEL
+   ============================================================ */
+html[data-theme="futuristic"] .settings-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .settings-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .settings-panel .settings-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .settings-panel .settings-header h1 { color: #e0e6ff; }
+html[data-theme="futuristic"] .settings-panel .btn-close { color: rgba(0,240,255,0.5); background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .settings-panel .btn-close:hover { color: #00f0ff; background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .settings-panel .settings-section { border-bottom-color: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .settings-panel .section-title { color: #00f0ff; text-shadow: 0 0 20px rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .settings-panel .setting-info label { color: #e0e6ff; }
+html[data-theme="futuristic"] .settings-panel .setting-desc { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .settings-panel .modern-select { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .settings-panel .toggle-slider { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .settings-panel .toggle-switch input:checked + .toggle-slider { background: linear-gradient(135deg, #00f0ff, #a855f7); }
+html[data-theme="futuristic"] .settings-panel .theme-toggle { background: rgba(0,240,255,0.03); }
+html[data-theme="futuristic"] .settings-panel .theme-btn { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .settings-panel .theme-btn.active { background: rgba(0,240,255,0.1); color: #00f0ff; box-shadow: 0 0 15px rgba(0,240,255,0.1); }
+html[data-theme="futuristic"] .settings-panel .btn-secondary { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .settings-panel .btn-secondary:hover { background: rgba(0,240,255,0.12); border-color: rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .settings-panel .btn-danger-sm { color: #ff4d6a; background: rgba(255,77,106,0.06); border-color: rgba(255,77,106,0.2); }
+html[data-theme="futuristic"] .settings-panel .btn-danger-sm:hover { background: rgba(255,77,106,0.12); }
+html[data-theme="futuristic"] .settings-panel .shortcut-row { background: rgba(0,240,255,0.02); }
+html[data-theme="futuristic"] .settings-panel kbd { background: rgba(0,240,255,0.08); border-color: rgba(0,240,255,0.15); color: #00f0ff; }
+html[data-theme="futuristic"] .settings-panel .shortcut-action { color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .settings-panel .about-info { background: rgba(0,240,255,0.03); }
+html[data-theme="futuristic"] .settings-panel .about-label { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .settings-panel .about-value { color: #00f0ff; }
+html[data-theme="futuristic"] .settings-panel .update-msg.success { color: #00ff88; background: rgba(0,255,136,0.06); }
+html[data-theme="futuristic"] .settings-panel .update-msg.info { color: #00f0ff; background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .settings-panel .danger-zone .section-title { color: #ff4d6a; text-shadow: 0 0 20px rgba(255,77,106,0.3); }
+html[data-theme="futuristic"] .settings-panel .settings-body::-webkit-scrollbar-thumb { background: rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .settings-panel .modern-slider { accent-color: #00f0ff; }
+
+
+/* ============================================================
+   IMAGE EDITOR
+   ============================================================ */
+html[data-theme="futuristic"] .editor-overlay { background: rgba(2, 2, 15, 0.9); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .editor-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .editor-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .editor-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .editor-panel .file-name { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .editor-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .editor-panel .canvas-area { background: #050510; }
+html[data-theme="futuristic"] .editor-panel .controls-sidebar { border-left-color: rgba(0,240,255,0.08); background: #0a0f1e; }
+html[data-theme="futuristic"] .editor-panel .control-section h3 { color: #00f0ff; text-shadow: 0 0 15px rgba(0,240,255,0.2); }
+html[data-theme="futuristic"] .editor-panel .tool-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.12); color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .editor-panel .tool-btn:hover { background: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .editor-panel .tool-btn.active { background: rgba(0,240,255,0.12); border-color: #00f0ff; color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .editor-panel .slider-group label { color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .editor-panel .slider-group .val { color: #00f0ff; }
+html[data-theme="futuristic"] .editor-panel .crop-info { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .editor-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .editor-panel .action-btn:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .editor-panel .action-btn.primary { background: linear-gradient(135deg, #00f0ff, #a855f7); border-color: transparent; color: #000; font-weight: 700; }
+
+
+/* ============================================================
+   VIDEO EDITOR
+   ============================================================ */
+html[data-theme="futuristic"] .video-trimmer-overlay { background: rgba(2, 2, 15, 0.9); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .video-trimmer-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .video-trimmer-panel .trimmer-header { border-bottom-color: rgba(0,240,255,0.08); background: rgba(0,240,255,0.02); }
+html[data-theme="futuristic"] .video-trimmer-panel .trimmer-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .header-subtitle { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .video-trimmer-panel .close-btn { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .video-trimmer-panel .close-btn:hover { color: #00f0ff; background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .preview-column { background: #050510; background-image: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.08) 0%, transparent 68%); }
+html[data-theme="futuristic"] .video-trimmer-panel .inspector-column { background: #0a0f1e; border-left-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .layout-divider { background: rgba(0,240,255,0.02); }
+html[data-theme="futuristic"] .video-trimmer-panel .layout-divider::before { background: rgba(0,240,255,0.14); box-shadow: 0 0 12px rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .video-trimmer-panel .preview-card { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); box-shadow: 0 0 0 1px rgba(0,240,255,0.03) inset; }
+html[data-theme="futuristic"] .video-trimmer-panel .project-preview-card { background: linear-gradient(180deg, rgba(0,240,255,0.05), rgba(10,15,30,0.92)); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-workspace .timeline-summary-card,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-workspace .timeline-list { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); box-shadow: 0 0 0 1px rgba(0,240,255,0.03) inset; }
+html[data-theme="futuristic"] .video-trimmer-panel .preview-card-header strong,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-summary-card strong,
+html[data-theme="futuristic"] .video-trimmer-panel .clip-editor-card strong,
+html[data-theme="futuristic"] .video-trimmer-panel .clip-copy strong,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-preview-empty-state strong { color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .summary-label,
+html[data-theme="futuristic"] .video-trimmer-panel .inspector-section-title { color: #00f0ff; text-shadow: 0 0 15px rgba(0,240,255,0.2); }
+html[data-theme="futuristic"] .video-trimmer-panel .summary-meta,
+html[data-theme="futuristic"] .video-trimmer-panel .source-chip-meta,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-hint,
+html[data-theme="futuristic"] .video-trimmer-panel .drag-hint,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-track-section-label,
+html[data-theme="futuristic"] .video-trimmer-panel .clip-copy span,
+html[data-theme="futuristic"] .video-trimmer-panel .audio-overlay-copy span,
+html[data-theme="futuristic"] .video-trimmer-panel .time-display,
+html[data-theme="futuristic"] .video-trimmer-panel .trim-time label,
+html[data-theme="futuristic"] .video-trimmer-panel .preview-status,
+html[data-theme="futuristic"] .video-trimmer-panel .ruler-transition,
+html[data-theme="futuristic"] .video-trimmer-panel .transition-edit-label,
+html[data-theme="futuristic"] .video-trimmer-panel .empty-timeline { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .video-trimmer-panel .source-chip,
+html[data-theme="futuristic"] .video-trimmer-panel .add-video-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.12); color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .video-trimmer-panel .source-chip:hover,
+html[data-theme="futuristic"] .video-trimmer-panel .add-video-btn:hover { background: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .source-chip.active { background: rgba(0,240,255,0.12); border-color: #00f0ff; color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .video-trimmer-panel .source-chip-name { color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .video-container,
+html[data-theme="futuristic"] .video-trimmer-panel .accurate-preview-stage { background: #050510; }
+html[data-theme="futuristic"] .video-trimmer-panel .ctrl-btn,
+html[data-theme="futuristic"] .video-trimmer-panel .action-btn,
+html[data-theme="futuristic"] .video-trimmer-panel .mini-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .ctrl-btn:hover,
+html[data-theme="futuristic"] .video-trimmer-panel .action-btn:hover,
+html[data-theme="futuristic"] .video-trimmer-panel .mini-btn:hover { background: rgba(0,240,255,0.12); border-color: rgba(0,240,255,0.3); }
+html[data-theme="futuristic"] .video-trimmer-panel .ctrl-btn.secondary,
+html[data-theme="futuristic"] .video-trimmer-panel .action-btn.secondary,
+html[data-theme="futuristic"] .video-trimmer-panel .mini-btn.secondary { color: rgba(200,220,255,0.7); }
+html[data-theme="futuristic"] .video-trimmer-panel .action-btn:not(.secondary):not(:disabled),
+html[data-theme="futuristic"] .video-trimmer-panel .btn-save { background: linear-gradient(135deg, #00f0ff, #a855f7); border-color: transparent; color: #000; font-weight: 700; }
+html[data-theme="futuristic"] .video-trimmer-panel .btn-cancel { border-color: rgba(0,240,255,0.15); color: rgba(200,220,255,0.7); background: transparent; }
+html[data-theme="futuristic"] .video-trimmer-panel .btn-cancel:hover { background: rgba(0,240,255,0.08); color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .mini-btn.danger { color: #ff4d6a; border-color: rgba(255,77,106,0.24); }
+html[data-theme="futuristic"] .video-trimmer-panel .mini-btn.danger:hover { background: rgba(255,77,106,0.08); border-color: rgba(255,77,106,0.36); color: #ff7f95; }
+html[data-theme="futuristic"] .video-trimmer-panel .preset-select { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .preset-select:focus,
+html[data-theme="futuristic"] .video-trimmer-panel input[type="number"]:focus,
+html[data-theme="futuristic"] .video-trimmer-panel input[type="text"]:focus { border-color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-summary-card,
+html[data-theme="futuristic"] .video-trimmer-panel .clip-editor-card,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-list { border-bottom-color: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .video-trimmer-panel .slider-field span:first-child,
+html[data-theme="futuristic"] .video-trimmer-panel .check-field span,
+html[data-theme="futuristic"] .video-trimmer-panel .preset-field > span { color: rgba(200,220,255,0.7); }
+html[data-theme="futuristic"] .video-trimmer-panel .slider-field strong,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-zoom-value,
+html[data-theme="futuristic"] .video-trimmer-panel .zoom-control-row strong,
+html[data-theme="futuristic"] .video-trimmer-panel .trim-time span,
+html[data-theme="futuristic"] .video-trimmer-panel .transition-pill strong,
+html[data-theme="futuristic"] .video-trimmer-panel .clip-order,
+html[data-theme="futuristic"] .video-trimmer-panel .clip-settings-line { color: #00f0ff; }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="checkbox"] { accent-color: #00f0ff; }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"] { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"]:hover { background: rgba(0,240,255,0.18); }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"]::-webkit-slider-thumb { background: #e0e6ff; border-color: #0a0f1e; box-shadow: 0 1px 4px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"]::-webkit-slider-thumb:hover { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.5), 0 0 0 2px rgba(0,240,255,0.25); }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"]::-webkit-slider-thumb:active { background: #00f0ff; box-shadow: 0 0 0 3px rgba(0,240,255,0.18); }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"]::-moz-range-thumb { background: #e0e6ff; border-color: #0a0f1e; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+html[data-theme="futuristic"] .video-trimmer-panel input[type="range"]::-moz-range-track { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .video-trimmer-panel .zoom-control-row,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-zoom-control { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-track { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .trim-region { background: rgba(0,240,255,0.16); border-top-color: rgba(0,240,255,0.75); border-bottom-color: rgba(0,240,255,0.75); }
+html[data-theme="futuristic"] .video-trimmer-panel .playhead { background: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .handle-bar { background: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.35); }
+html[data-theme="futuristic"] .video-trimmer-panel .trim-handle:hover .handle-bar { background: #7af7ff; box-shadow: 0 0 16px rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .video-trimmer-panel .preview-status.active { color: #00f0ff; border-color: rgba(0,240,255,0.25); background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-ruler-card { border-top-color: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-audio-section { border-top-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .empty-audio-track { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.12); color: rgba(0,240,255,0.45); }
+html[data-theme="futuristic"] .video-trimmer-panel .audio-overlay-block { background: linear-gradient(135deg, rgba(0,240,255,0.18), rgba(16,185,129,0.12)); border-color: rgba(0,240,255,0.24); box-shadow: 0 0 24px rgba(0,240,255,0.1); }
+html[data-theme="futuristic"] .video-trimmer-panel .audio-overlay-block.active { border-color: #00f0ff; box-shadow: 0 0 0 1px rgba(0,240,255,0.18), 0 0 24px rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .video-trimmer-panel .audio-overlay-copy strong,
+html[data-theme="futuristic"] .video-trimmer-panel .audio-overlay-duration { color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .ruler-tick { color: rgba(0,240,255,0.45); }
+html[data-theme="futuristic"] .video-trimmer-panel .ruler-tick::after,
+html[data-theme="futuristic"] .video-trimmer-panel .transition-bridge-line { background: rgba(0,240,255,0.16); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-ruler-track { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .ruler-segment { color: #e0e6ff; background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.26); }
+html[data-theme="futuristic"] .video-trimmer-panel .ruler-segment.active,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-clip.active { border-color: #00f0ff; box-shadow: 0 0 0 1px rgba(0,240,255,0.16), 0 0 16px rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .ruler-segment.transition-target,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-clip.transition-target { box-shadow: 0 0 0 1px rgba(0,240,255,0.4), 0 0 18px rgba(0,240,255,0.14); }
+html[data-theme="futuristic"] .video-trimmer-panel .transition-pill,
+html[data-theme="futuristic"] .video-trimmer-panel .transition-drag-core { background: rgba(10,15,30,0.96); border-color: rgba(0,240,255,0.2); color: #e0e6ff; }
+html[data-theme="futuristic"] .video-trimmer-panel .transition-drag-handle.active .transition-drag-core,
+html[data-theme="futuristic"] .video-trimmer-panel .transition-drag-handle:hover .transition-drag-core,
+html[data-theme="futuristic"] .video-trimmer-panel .transition-bridge.active .transition-pill { border-color: #00f0ff; box-shadow: 0 0 0 1px rgba(0,240,255,0.14), 0 0 14px rgba(0,240,255,0.16); }
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-clip { background: rgba(0,240,255,0.03); border-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .clip-thumb-wrap { background: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .video-trimmer-panel .clip-order { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .trimmer-actions { background: rgba(0,240,255,0.02); border-top-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .video-trimmer-panel .trim-error { color: #ff4d6a; }
+html[data-theme="futuristic"] .video-trimmer-panel .trim-success { color: #00ff88; }
+
+
+/* ============================================================
+   DELETE MODAL
+   ============================================================ */
+html[data-theme="futuristic"] .modal-backdrop { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .modal-content { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .modal-content .modal-title { color: #e0e6ff; }
+html[data-theme="futuristic"] .modal-content .modal-message { color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .modal-content .btn-secondary { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .modal-content .btn-secondary:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .modal-content .btn-confirm { background: linear-gradient(135deg, #ff4d6a, #ff1744); color: #fff; border: none; }
+html[data-theme="futuristic"] .modal-content .btn-confirm:hover { box-shadow: 0 0 20px rgba(255,77,106,0.3); }
+
+
+/* ============================================================
+   CREATE ALBUM MODAL
+   ============================================================ */
+html[data-theme="futuristic"] .modal-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .modal-overlay .modal { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); color: #e0e6ff; box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .modal-overlay .modal h3 { color: #e0e6ff; }
+html[data-theme="futuristic"] .modal-overlay .modal-subtitle { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .modal-overlay .modal-input { background: rgba(0,240,255,0.04); border-color: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .modal-overlay .modal-input:focus { border-color: #00f0ff; box-shadow: 0 0 12px rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .modal-overlay .btn-secondary { background: transparent; border-color: rgba(0,240,255,0.15); color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .modal-overlay .btn-secondary:hover { background: rgba(0,240,255,0.08); color: #e0e6ff; }
+html[data-theme="futuristic"] .modal-overlay .btn-primary { background: linear-gradient(135deg, #00f0ff, #a855f7); color: #000; font-weight: 700; border: none; }
+
+
+/* ============================================================
+   ONBOARDING WIZARD
+   ============================================================ */
+html[data-theme="futuristic"] .onboarding-overlay { background: rgba(2, 2, 15, 0.9); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .onboarding-card { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 80px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .onboarding-card h1 { color: #e0e6ff; }
+html[data-theme="futuristic"] .onboarding-card h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .onboarding-card .subtitle { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .onboarding-card .description { color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .onboarding-card .feature-item { background: rgba(0,240,255,0.04); color: rgba(200,220,255,0.7); border: 1px solid rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .onboarding-card .concept-card { background: rgba(0,240,255,0.03); border: 1px solid rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .onboarding-card .concept-card h3 { color: #00f0ff; }
+html[data-theme="futuristic"] .onboarding-card .concept-card p { color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .onboarding-card .shortcut-row { border-bottom-color: rgba(0,240,255,0.06); }
+html[data-theme="futuristic"] .onboarding-card .shortcut-row span { color: rgba(200,220,255,0.7); }
+html[data-theme="futuristic"] .onboarding-card kbd { background: rgba(0,240,255,0.08); border-color: rgba(0,240,255,0.15); color: #00f0ff; }
+html[data-theme="futuristic"] .onboarding-card .tip { color: rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .onboarding-card .btn-back { background: rgba(0,240,255,0.06); color: rgba(200,220,255,0.6); }
+html[data-theme="futuristic"] .onboarding-card .btn-back:hover { background: rgba(0,240,255,0.12); color: #e0e6ff; }
+html[data-theme="futuristic"] .onboarding-card .btn-skip { color: rgba(0,240,255,0.35); }
+html[data-theme="futuristic"] .onboarding-card .btn-skip:hover { color: #00f0ff; }
+html[data-theme="futuristic"] .onboarding-card .dot { background: rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .onboarding-card .dot.active { background: #00f0ff; box-shadow: 0 0 10px rgba(0,240,255,0.4); }
+html[data-theme="futuristic"] .onboarding-card .dot.completed { background: #a855f7; box-shadow: 0 0 10px rgba(168,85,247,0.4); }
+
+
+/* ============================================================
+   MAP VIEW
+   ============================================================ */
+html[data-theme="futuristic"] .map-overlay { background: rgba(2, 2, 15, 0.85); backdrop-filter: blur(20px); }
+html[data-theme="futuristic"] .map-panel { background: #0a0f1e; border: 1px solid rgba(0,240,255,0.12); box-shadow: 0 0 60px rgba(0,240,255,0.08), 0 20px 60px rgba(0,0,0,0.5); }
+html[data-theme="futuristic"] .map-panel .panel-header { border-bottom-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .map-panel .panel-header h2 { color: #e0e6ff; }
+html[data-theme="futuristic"] .map-panel .photo-count { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .map-panel .btn-close { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .map-panel .map-loading { color: rgba(0,240,255,0.5); }
+html[data-theme="futuristic"] .map-panel .photo-strip { background: #0a0f1e; border-top-color: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .map-panel .strip-header { color: #e0e6ff; }
+html[data-theme="futuristic"] .map-panel .strip-thumb { border-color: rgba(0,240,255,0.15); }
+html[data-theme="futuristic"] .map-panel .strip-thumb:hover { border-color: #00f0ff; box-shadow: 0 0 10px rgba(0,240,255,0.2); }
+html[data-theme="futuristic"] .map-panel .action-btn { background: rgba(0,240,255,0.06); border-color: rgba(0,240,255,0.15); color: #e0e6ff; }
+html[data-theme="futuristic"] .map-panel .action-btn:hover { background: rgba(0,240,255,0.12); }
+html[data-theme="futuristic"] .map-panel .gps-progress-track { background: rgba(0,240,255,0.08); }
+html[data-theme="futuristic"] .map-panel .gps-progress-details { color: rgba(0,240,255,0.4); }
+
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+html[data-theme="futuristic"] .lightbox-overlay { background: rgba(2, 2, 15, 0.98); }
+
+
+/* ============================================================
+   GLOBAL SCROLLBAR IN MODALS (futuristic)
+   ============================================================ */
+html[data-theme="futuristic"] .smart-album-panel::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .people-panel .panel-body::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .context-panel .panel-body::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .batch-panel::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .import-panel::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .dup-panel .panel-body::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .editor-panel::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .video-trimmer-panel::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .video-trimmer-panel .preview-column::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .video-trimmer-panel .inspector-column::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-ruler-scroll::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .onboarding-card::-webkit-scrollbar-thumb,
+html[data-theme="futuristic"] .map-panel::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.15);
+  border-radius: 4px;
+}
+
+html[data-theme="futuristic"] .smart-album-panel::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .people-panel .panel-body::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .context-panel .panel-body::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .batch-panel::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .import-panel::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .dup-panel .panel-body::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .editor-panel::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .video-trimmer-panel::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .video-trimmer-panel .preview-column::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .video-trimmer-panel .inspector-column::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .video-trimmer-panel .timeline-ruler-scroll::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .onboarding-card::-webkit-scrollbar-track,
+html[data-theme="futuristic"] .map-panel::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,142 @@
+appId: com.pluto.photos
+productName: Pluto Photos
+directories:
+  buildResources: build
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!license-server/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+  # Exclude dead/legacy background removal models (~488MB)
+  - '!resources/bg-removal'
+  - '!resources/bg-removal-rmbg'
+  - '!resources/isnet-general-use'
+  - '!resources/u2net'
+  # Exclude cross-platform ffmpeg binary (keep only current platform)
+  - '!node_modules/ffmpeg-static/ffmpeg'
+  - '!node_modules/ffmpeg-static/ffmpeg.LICENSE'
+  - '!node_modules/ffmpeg-static/ffmpeg.README'
+  # Exclude better-sqlite3 C source files and cross-platform binaries
+  - '!node_modules/better-sqlite3/deps/**'
+  - '!node_modules/better-sqlite3/src/**'
+  - '!node_modules/better-sqlite3/bin/**'
+  # Exclude ag-psd test fixtures
+  - '!node_modules/ag-psd/test/**'
+electronLanguages:
+  - en-US
+asarUnpack:
+  - resources/**
+  - node_modules/better-sqlite3/**
+  - node_modules/sharp/**
+  - node_modules/detect-libc/**
+  - node_modules/semver/**
+  - node_modules/exifr/**
+  - node_modules/ffmpeg-static/**
+  - node_modules/@img/**
+  - node_modules/@napi-rs/**
+  - node_modules/onnxruntime-node/**
+extraResources:
+  - from: resources/face-models
+    to: app.asar.unpacked/resources/face-models
+  - from: resources/birefnet
+    to: app.asar.unpacked/resources/birefnet
+  - from: resources/caption-model
+    to: app.asar.unpacked/resources/caption-model
+  - from: resources/blip-model
+    to: app.asar.unpacked/resources/blip-model
+  - from: resources/luts
+    to: app.asar.unpacked/resources/luts
+win:
+  executableName: Pluto Photos
+  icon: resources/icon.ico
+  requestedExecutionLevel: asInvoker
+  fileAssociations:
+    - ext:
+        - jpg
+        - jpeg
+        - png
+        - webp
+        - gif
+        - heic
+        - heif
+        - tiff
+        - tif
+        - bmp
+        - cr2
+        - nef
+        - arw
+        - dng
+      name: Image File
+      description: Image file supported by Pluto Photos
+      role: Viewer
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerHeader: build/installerHeader.bmp
+  installerSidebar: build/installerSidebar.bmp
+  uninstallerSidebar: build/installerSidebar.bmp
+  include: build/installer.nsh
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  license: build/license.txt
+mac:
+  icon: resources/icon.png
+  target:
+    - dmg
+    - zip
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  fileAssociations:
+    - ext:
+        - jpg
+        - jpeg
+        - png
+        - webp
+        - gif
+        - heic
+        - heif
+        - tiff
+        - tif
+        - bmp
+        - cr2
+        - nef
+        - arw
+        - dng
+      name: Image File
+      description: Image file supported by Pluto Photos
+      role: Viewer
+  extendInfo:
+    NSDocumentsFolderUsageDescription: "Pluto Photos needs access to your Documents to import and manage photos."
+    NSDownloadsFolderUsageDescription: "Pluto Photos needs access to Downloads to import photos."
+    NSDesktopFolderUsageDescription: "Pluto Photos needs Desktop access to import photos."
+    NSRemovableVolumesUsageDescription: "Pluto Photos needs access to external drives to import photos."
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  notarize: false
+  category: public.app-category.photography
+afterSign: build/afterSign.cjs
+dmg:
+  artifactName: ${name}-${version}.${ext}
+linux:
+  icon: resources/icon.png
+  target:
+    - AppImage
+    - deb
+  maintainer: Pluto Photos
+  category: Graphics
+appImage:
+  artifactName: ${name}-${version}.${ext}
+npmRebuild: true
+afterPack: build/afterPack.cjs
+publish:
+  provider: generic
+  url: https://plutophotos.com/downloads/
